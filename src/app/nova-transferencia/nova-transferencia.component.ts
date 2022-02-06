@@ -17,10 +17,16 @@ export class NovaTransferenciaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  transferir() {
+  transferir(): void {
     console.log('Solicitada nova transferência');
     const valorEmitir = {valor: this.valor, destino: this.destino};
     this.aoTransferir.emit(valorEmitir);
+    this.limparCampos();
+  }
+
+  limparCampos(): void {
+    this.valor = 0;
+    this.destino = 0;
   }
 
 }
